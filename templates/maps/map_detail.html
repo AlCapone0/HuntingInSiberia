@@ -1,0 +1,17 @@
+{% extends "index.html"%}
+{% block html_title %}
+    Карта район {{ map.name }}
+{% endblock %}
+
+
+{% block application %}
+    <a href="{% url 'home' %}">Главная</a>
+    <div>
+        <h2>{{ map.name }}</h2>
+        {% if map.photomap %}
+            <img src="{{ map.photomap.url }}" alt="{{ map.name }} ">
+        {% endif %}
+        <div>{{ map.description }}</div>
+    </div>
+
+{% endblock %}

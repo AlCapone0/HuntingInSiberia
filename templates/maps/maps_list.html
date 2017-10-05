@@ -1,0 +1,13 @@
+{% extends "index.html"%}
+{% block application %}
+
+{% for map in maps %}
+    <div>
+        <h2><a href="{% url 'map' map_id=map.id %}">{{ map.name }}</a></h2>
+        {% if map.photomap %}
+            <img src="{{ map.photomap.url }}" alt="{{ map.name }} ">
+        {% endif %}
+        <div>{{ map.description }}</div>
+    </div>
+{% endfor %}
+{%  endblock %}
