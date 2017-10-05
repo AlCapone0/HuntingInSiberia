@@ -3,7 +3,7 @@ from .models import Map
 
 
 def maps_list(request): #возращаем ответ на запрос, рендереную страницу
-    maps = Map.objects.all() # переменой maps пресваиваем все объекты из БД
+    maps = Map.objects.all() # переменой maps пресваиваем все объекты из БД sql
     return render(request, "maps/maps_list.html", {"maps":maps}) # возращаем от рендереную страницу
 
 def map_detail(request, map_id): #запрос посетителя к странице map_detail
